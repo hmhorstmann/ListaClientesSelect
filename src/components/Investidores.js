@@ -1,7 +1,7 @@
 import LinhaTabela from './LinhaTabela'
 const Investidores = () => {
     return (
-        <section className="teste">
+        <>
             <h1>Lista de Investidores</h1>
             <form className="d-flex flex-row mb-3">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -23,7 +23,7 @@ const Investidores = () => {
                     <LinhaTabela />
                 </tbody>
             </table>
-        </section>
+        </>
     )
 }
 
