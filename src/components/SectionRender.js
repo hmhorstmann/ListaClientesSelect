@@ -1,10 +1,18 @@
 import Investidores from './Investidores'
+import Outras from './Outras'
 
-const SectionRender = () => {
+const SectionRender = ({ page }) => {
+
+    let pageRender
+    if (page !== "investidores") {
+        pageRender = <Outras imagem={page} />
+    } else {
+        pageRender = <Investidores />
+    }
 
     return (
         <section>
-            <Investidores />
+            {pageRender}
         </section>
     )
 }
