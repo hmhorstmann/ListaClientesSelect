@@ -1,8 +1,9 @@
+import LinhaTabela from './LinhaTabela'
 const Investidores = () => {
     return (
         <section className="teste">
             <h1>Lista de Investidores</h1>
-            <form className="d-flex flex-row-reverse mb-3">
+            <form className="d-flex flex-row mb-3">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                 <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
@@ -17,13 +18,9 @@ const Investidores = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Leanne Graham</td>
-                        <td>Sincere@april.biz</td>
-                        <td>1-770-736-8031 x56442</td>
-                        <td>Romaguera-Crona</td>
-                    </tr>
+                    <LinhaTabela />
+                    <LinhaTabela />
+                    <LinhaTabela />
                 </tbody>
             </table>
         </section>
