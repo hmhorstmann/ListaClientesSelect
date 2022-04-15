@@ -7,9 +7,7 @@ import React from 'react'
 function App() {
 
     const [pageState, setPageState] = React.useState("home")
-    const [infoState, setInfoState] = React.useState({
-        infos: []
-    })
+    const [infoState, setInfoState] = React.useState([])
 
 
     return (

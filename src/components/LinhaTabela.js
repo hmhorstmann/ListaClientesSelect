@@ -3,32 +3,22 @@ import axios from "axios"
 
 const LinhaTabela = ({ infoState, setInfoState }) => {
 
-    React.useEffect(() => {
-        getInfos('users/')
+
+    React.useEffect((infoState) => {
+        async function getInfos(infoState) {
+            const requestData = await axios.get('https://jsonplaceholder.typicode.com/users/')
+            setInfoState(requestData.data)
+        }
+        getInfos(infoState)
     }, [])
-
-    const api = axios.create({
-        baseURL: "https://jsonplaceholder.typicode.com/"
-    })
-
-    async function getInfos(usuarios) {
-        const { data } = await api
-            .get(usuarios)
-
-        setInfoState(prevState => ({
-            ...prevState,
-            infos: data
-        }))
-    }
-
 
 
     return (
         <>
-            {infoState.infos.map(item => (
+            {infoState.map(item => (
                 <tr key={item.id}>
                     <td>{item.id}</td>
-                    <td>{item.name}</td>{/* no futuro pegar esses dados do json lá*/}
+                    <td>{item.name}</td>
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>{item.address.city}</td>
