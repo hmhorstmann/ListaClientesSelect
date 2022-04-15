@@ -6,14 +6,18 @@ import React from 'react'
 
 function App() {
 
-    const [pageState, setPageState] = React.useState("investidores")
+    const [pageState, setPageState] = React.useState("home")
+    const [infoState, setInfoState] = React.useState({
+        infos: []
+    })
+
 
     return (
         <main>
             <header className="App-header">
-                <Navbar setPage={setPageState} />
+                <Navbar setPage={setPageState} setInfoState={setInfoState} />
             </header>
-            <SectionRender page={pageState} />
+            <SectionRender page={pageState} infoState={infoState} setInfoState={setInfoState} />
         </main>
     );
 }

@@ -1,5 +1,8 @@
+import React from 'react'
 import LinhaTabela from './LinhaTabela'
-const Investidores = () => {
+
+const Investidores = ({ infoState, setInfoState }) => {
+
     return (
         <>
             <h1>Lista de Investidores</h1>
@@ -14,13 +17,12 @@ const Investidores = () => {
                         <th scope="col">Nome</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Telefone</th>
+                        <th scope="col">Cidade</th>
                         <th scope="col">Empresa</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <LinhaTabela />
-                    <LinhaTabela />
-                    <LinhaTabela />
+                    <LinhaTabela infoState={infoState} setInfoState={setInfoState} />
                 </tbody>
             </table>
         </>
