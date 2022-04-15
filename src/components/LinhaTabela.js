@@ -1,13 +1,14 @@
 import React from "react"
 import axios from "axios"
 
-const LinhaTabela = ({ infoState, setInfoState }) => {
+const LinhaTabela = ({ infoState, setInfoState, setOriginalState }) => {
 
 
     React.useEffect((infoState) => {
         async function getInfos(infoState) {
             const requestData = await axios.get('https://jsonplaceholder.typicode.com/users/')
             setInfoState(requestData.data)
+            setOriginalState(requestData.data)
         }
         getInfos(infoState)
     }, [])

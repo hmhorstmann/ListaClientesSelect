@@ -6,8 +6,9 @@ import React from 'react'
 
 function App() {
 
-    const [pageState, setPageState] = React.useState("home")
+    const [pageState, setPageState] = React.useState("investidores")
     const [infoState, setInfoState] = React.useState([])
+    const [originalState, setOriginalState] = React.useState([])
 
 
     return (
@@ -15,7 +16,7 @@ function App() {
             <header className="App-header">
                 <Navbar setPage={setPageState} setInfoState={setInfoState} />
             </header>
-            <SectionRender page={pageState} infoState={infoState} setInfoState={setInfoState} />
+            <SectionRender page={pageState} infoState={infoState} setInfoState={setInfoState} originalState={originalState} setOriginalState={setOriginalState} />
         </main>
     );
 }
