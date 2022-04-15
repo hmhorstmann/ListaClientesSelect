@@ -6,7 +6,8 @@ const Investidores = ({ infoState, setInfoState, originalState, setOriginalState
     const [searchState, setSearchState] = React.useState("")
     const [selectState, setSelectState] = React.useState("Nome")
 
-    function submitSearch() {
+    function submitSearch(e) {
+        e.preventDefault()
         setInfoState(searchTable())
     }
 
